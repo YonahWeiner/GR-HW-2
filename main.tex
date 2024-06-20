@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{physics}
+\usepackage{amsmath}
+
+\title{GR HW 2}
+\author{Yonah Weiner 337756787}
+\date{June 18, 2024}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Question 1}
+\subsubsection*{1. Show that the entire path is contained within a sphere.}
+\subsubsection*{Solution}
+The trajectory in spherical coordinates is: 
+\begin{equation}
+        \gamma'^i(\lambda) =  \begin{pmatrix}
+            R\\
+            \psi\\
+            \omega \lambda
+        \end{pmatrix}
+\end{equation}
+We see that $R$ is constant for any $\lambda$, therefore the entire trajectory is contained within a sphere radius $R$.
+\subsubsection*{2. Find the velocity vector in the given coordinates}
+\subsubsection*{Solution}
+We calculate the velocity in the Cartesian coordinates:
+\begin{equation}
+        \dv{\lambda}\gamma^i(\lambda) = \dv{\lambda}( R\begin{pmatrix}
+            \sin \psi \cos (\omega\lambda)\\
+            \sin \psi \sin (\omega\lambda)\\
+            \cos \psi 
+        \end{pmatrix})= R\omega\begin{pmatrix}
+           -\sin \psi \sin (\omega\lambda)\\
+           \sin \psi \cos (\omega\lambda)\\
+            0
+        \end{pmatrix}
+\end{equation}
+
+\subsubsection*{3. Calculate the velocity vector in spherical coordinates by two methods:}
+\paragraph{(a) Taking a derivative of $\lambda'^i$}
+\paragraph{Solution}
+
+\begin{equation*}
+    \dv{\lambda}\gamma'^i(\lambda) = \dv{\lambda} \begin{pmatrix}
+            R\\
+            \psi\\
+            \omega \lambda
+        \end{pmatrix}= \begin{pmatrix}
+           0\\
+           0\\
+            \omega
+        \end{pmatrix}
+\end{equation*}
+\paragraph{(b) Applying the transformation law on the the velocity vector in the original coordinates}
+The transformation matrix is given by:
+\begin{equation*}
+\begin{split}
+    \dv{x'}{x} &=\begin{pmatrix}
+        \dv{r}{x} & \dv{r}{y} & \dv{r}{z}\\
+        \dv{\psi}{x} & \dv{\psi}{y} & \dv{\psi}{z}\\
+        \dv{\phi}{x} & \dv{\phi}{y} & \dv{\phi}{z}
+    \end{pmatrix}\\
+    &=\begin{pmatrix}
+        \dv{x}{r} & \dv{x}{\psi} & \dv{x}{\phi}\\
+        \dv{y}{r} & \dv{y}{\psi} & \dv{y}{\phi}\\
+        \dv{z}{r} & \dv{z}{\psi} & \dv{z}{\phi}
+    \end{pmatrix}^{-1}\\
+    &=\begin{pmatrix}
+        \sin \psi \cos \phi & r\cos \psi \cos \phi & -r\sin \psi \sin \phi\\
+        \sin \psi \sin \phi & r\cos \psi \sin \phi & r\sin \psi \cos \phi\\
+        \cos \psi  & -r\sin \psi & 0
+    \end{pmatrix}^{-1}\\
+    &=\text{mathematica}\\
+    &=\left(
+\begin{array}{ccc}
+ \sin (\psi) \cos (\phi) & \sin (\psi) \sin (\phi) & \cos (\psi) \\
+ \frac{\cos (\psi) \cos (\phi)}{r} & \frac{\cos (\psi) \sin (\phi)}{r} & -\frac{\sin (\psi)}{r} \\
+ -\frac{\csc (\psi) \sin (\phi)}{r} & \frac{\csc (\psi) \cos (\phi)}{r} & 0 \\
+\end{array}
+\right)\\
+&=\left(
+\begin{array}{ccc}
+ \sin (\psi) \cos (\omega \lambda) & \sin (\psi) \sin (\omega \lambda) & \cos (\psi) \\
+ \frac{\cos (\psi) \cos (\omega \lambda)}{R} & \frac{\cos (\psi) \sin (\omega \lambda)}{R} & -\frac{\sin (\psi)}{R} \\
+ -\frac{\csc (\psi) \sin (\omega \lambda)}{R} & \frac{\csc (\psi) \cos (\omega \lambda)}{R} & 0 \\
+\end{array}
+\right)
+    \end{split}
+\end{equation*}
+Now we use the transformation law:
+\begin{equation*}
+\begin{split}
+   \dv{\lambda}\gamma'^i(\lambda)  &= \left(
+\begin{array}{ccc}
+ \sin (\psi) \cos (\omega \lambda) & \sin (\psi) \sin (\omega \lambda) & \cos (\psi) \\
+ \frac{\cos (\psi) \cos (\omega \lambda)}{R} & \frac{\cos (\psi) \sin (\omega \lambda)}{R} & -\frac{\sin (\psi)}{r} \\
+ -\frac{\csc (\psi) \sin (\omega \lambda)}{R} & \frac{\csc (\psi) \cos (\omega \lambda)}{R} & 0 \\
+\end{array}
+\right) \begin{pmatrix}
+           - R\omega\sin \psi \sin (\omega\lambda)\\
+            R\omega\sin \psi \cos (\omega\lambda)\\
+            0
+        \end{pmatrix} = \left(\begin{array}{c}
+             0 \\
+             0 \\
+             \omega
+        \end{array}\right)
+\end{split}
+\end{equation*}
+\subsection*{Question 2}
+In the tutorial we have discussed integral lines of a given vector field. find the integral lines of the following vector fields:
+
+\end{document}
