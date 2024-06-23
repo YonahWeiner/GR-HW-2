@@ -111,5 +111,47 @@ Now we use the transformation law:
 \end{equation*}
 \subsection*{Question 2}
 In the tutorial we have discussed integral lines of a given vector field. find the integral lines of the following vector fields:
-
+\subsubsection*{1. $T_1^i(x)=\left( \begin{array}{c} 0\\\omega \end{array}\right)$ which starts with  $\left( \begin{array}{c} \frac{\pi}{2}\\ \varphi_0 \end{array}\right)$ given in spherical coordinates}
+We need to solve the equation:
+\begin{equation*}
+    \dot{\gamma}^i(\lambda)=
+    \left( \begin{array}{c} \dot{\theta}\\\dot{\varphi} \end{array}\right)
+    =\left( \begin{array}{c} 0\\\omega \end{array}\right)
+\end{equation*}
+Solving this we get the general equation:
+\begin{equation*}
+     \gamma^i(\lambda)=
+    \left( \begin{array}{c} C_1\\\omega \lambda + C_2 \end{array}\right)
+\end{equation*}
+We plug in the initial conditions,  $\left( \begin{array}{c} \frac{\pi}{2}\\ \varphi_0 \end{array}\right)$, and get:
+\begin{equation*}
+    \boxed{ \gamma^i(\lambda)=
+    \left( \begin{array}{c} \frac{\pi}{2}\\\omega \lambda + \varphi_0 \end{array}\right)}
+\end{equation*}
+\subsubsection*{2. $T_1^i(x)=\left( \begin{array}{c} -y\\x \end{array}\right)$ which starts with  $\left( \begin{array}{c} x_0 \\ y_0 \end{array}\right)$ given in Cartesian coordinates}
+We need to solve the equation:
+\begin{equation*}
+    \dot{\gamma}^i(\lambda)=
+    \left( \begin{array}{c} \dot{x}\\\dot{y} \end{array}\right)
+    =\left( \begin{array}{c} -y\\x \end{array}\right)
+    =\begin{pmatrix}
+        0 & -1\\
+        1 & 0
+    \end{pmatrix}\left( \begin{array}{c} x\\y \end{array}\right)
+\end{equation*}
+Solving this we get the equation with the initial conditions  $\left( \begin{array}{c} x_0 \\ y_0 \end{array}\right)$ we get:
+\begin{equation*}
+    \gamma^i(\lambda)=\exp \left(\begin{pmatrix}
+        0 & -1\\
+        1 & 0
+    \end{pmatrix}\lambda\right)\left( \begin{array}{c} x_0 \\ y_0 \end{array}\right)=(*)
+\end{equation*}
+Using Mathematica:
+\begin{equation*}
+\boxed{
+    (*)=\begin{pmatrix}
+        1 & e^{-\lambda}\\
+        e^{\lambda} & 1
+    \end{pmatrix}\left( \begin{array}{c} x_0 \\ y_0 \end{array}\right)}
+\end{equation*}
 \end{document}
